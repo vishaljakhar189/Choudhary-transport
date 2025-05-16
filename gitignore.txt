@@ -1,0 +1,11 @@
+
+
+
+
+
+
+# End of https://mrkandreev.name/snippets/gitignore-generator/##,Ignore,system,files,(Mac/Windows)
+.DS_Store
+Thumbs.db
+
+#,log
