@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choudhary Transport - Order Now</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .section {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h1>Place Your Order</h1>
+    <form onsubmit="sendToWhatsApp(); return false;">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="text" id="material" placeholder="Material (e.g. Cement)" required>
+      <input type="number" id="quantity" placeholder="Quantity (in tons)" required>
+      <input type="text" id="pickup" placeholder="Pickup Location" required>
+      <input type="text" id="delivery" placeholder="Delivery Location" required>
+      <textarea id="notes" placeholder="Additional Notes (optional)"></textarea>
+      <button type="submit">Submit via WhatsApp</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>About Choudhary Transport</h2>
+    <p>We are a trusted transport coordination company with over 20 years of experience in connecting buyers and suppliers across India. We specialize in transporting materials like cement, bricks, sand, and more at competitive rates.</p>
+  </div>
+
+  <div class="section">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> +91 9057504766</p>
+    <p><strong>Email:</strong> vishaljakhar189@gmail.com</p>
+    <p><strong>Address:</strong> Vijay Nagar, Suratgarh, Rajasthan</p>
+  </div>
+
+  <script>
+    function sendToWhatsApp() {
+      let name = document.getElementById("name").value;
+      let material = document.getElementById("material").value;
+      let quantity = document.getElementById("quantity").value;
+      let pickup = document.getElementById("pickup").value;
+      let delivery = document.getElementById("delivery").value;
+      let notes = document.getElementById("notes").value;
+
+      let message = `New Order:
+Name: ${name}
+Material: ${material}
+Quantity: ${quantity}
+Pickup Location: ${pickup}
+Delivery Location: ${delivery}
+Notes: ${notes}`;
+
+      let phoneNumber = "919057504766";
+      let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
